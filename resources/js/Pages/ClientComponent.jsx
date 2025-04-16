@@ -1,7 +1,8 @@
+import ClientsTable from "@/Components/ClientsTable";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link } from "@inertiajs/react";
 
-export default function ClientComponent() {
+export default function ClientComponent({ clients }) {
     return (
         <>
             <AuthenticatedLayout>
@@ -63,7 +64,7 @@ export default function ClientComponent() {
                         </nav>
 
                         <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                            <div>User Component</div>
+                            <ClientsTable clients={clients} />
                         </div>
                     </div>
                 </div>

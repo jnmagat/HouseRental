@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,6 +22,8 @@ Route::get('/users', function() {
 Route::get('/clients', function() {
     return Inertia::render('Clients/ClientComponent');
 });
+
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
